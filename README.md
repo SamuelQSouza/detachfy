@@ -11,9 +11,6 @@
 <p>
   <img alt="GitHub numero de linguagens" src="https://img.shields.io/github/languages/count/SamuelQSouza/detachfy?color=%2304D361">
   <img alt="tamanho repositório" src="https://img.shields.io/github/repo-size/SamuelQSouza/detachfy">	
-  <a href="https://www.linkedin.com/in/samuelqsouza/">
-    <img alt="Made by SamuelQSouza" src="https://img.shields.io/badge/made%20by-SamuelQSouza-%2304D361">
-  </a>
    <a href="https://github.com/SamuelQSouza/detachfy/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/SamuelQSouza/detachfy">
   </a>
@@ -33,13 +30,33 @@ Para clonar esta aplicação você precisa ter [Git](https://git-scm.com), [Node
 Em seu terminal:
 
 
-### Instalando a API
+### Clonando o repositorio
 ```bash
 # Clone este repositorio
 $ git clone https://github.com/SamuelQSouza/ddr-challenge
 
 # Entre no diretorio do projeto
 $ cd detachfy
+
+```
+
+#### Executando o server
+```bash
+# Entre no diretorio do projeto
+$ cd backend
+
+# Instale as dependências
+$ npm install
+
+# execute a API
+$ npm run dev
+
+```
+
+#### Executando o front
+```bash
+# Entre no diretorio do projeto
+$ cd frontend
 
 # Instale as dependências
 $ npm install
@@ -50,4 +67,4 @@ $ npm start
 ```
 
 
-Made by Samuel Souza :wave: [Get in touch!](https://www.linkedin.com/in/samuelqsouza/)
+:wave: [Get in touch!](https://www.linkedin.com/in/samuelqsouza/)
