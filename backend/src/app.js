@@ -1,12 +1,18 @@
+import express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
 
-import express from 'express';
-import cors from 'cors';
-import routes from './routes';
+import routes from './routes.js'
+ const app = express()
 
-const app = express();
+mongoose.connect('mongodb://localhost:27017/detachfy', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+})
 
-app.use(cors());
-app.use(express.json());
-app.use(routes);
+app.use(cors())
+app.use(express.json())
+app.use(routes)
 
-module.exports = app;
+app.listen(3333)
