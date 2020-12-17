@@ -41,67 +41,67 @@ const Register = () => {
 
 
 
-    return (
-      <div id="page-register">
-        <Container>
+  return (
+    <div id="page-register">
+      <Container>
 
-          <form className="form-container" onSubmit={handleRegister}>
-            <input
-              className="single-input"
-              placeholder="Nome"
-              value={name}
-              onChange={e => setName(e.target.value)}
-            />
-            <input
-              className="single-input"
-              placeholder="E-mail"
-              type="email"
-              required
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-            <input
-              className="single-input"
-              placeholder="Whatsapp"
-              value={whatsapp}
-              onChange={e => setWhatsapp(e.target.value)}
-            />
+        <form className="form-container" onSubmit={handleRegister}>
+          <input
+            className="single-input"
+            placeholder="Nome"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <input
+            className="single-input"
+            placeholder="E-mail"
+            type="email"
+            required
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <input
+            className="single-input"
+            placeholder="Whatsapp"
+            value={whatsapp}
+            onChange={e => setWhatsapp(e.target.value)}
+          />
 
-            <input
-              className="single-input"
-              placeholder="ies"
-              value={ies}
-              onChange={e => setIes(e.target.value)}
-            />
-            <input
-              className="single-input"
-              placeholder="password"
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
+          <input
+            className="single-input"
+            placeholder="ies"
+            value={ies}
+            onChange={e => setIes(e.target.value)}
+          />
+          <input
+            className="single-input"
+            placeholder="password"
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
 
-
-            <button type="submit" className="button">
-              Cadastrar
+          <button type="submit" className="button">
+            Cadastrar
           </button>
-          </form>
-          <section className="register-header">
+        </form>
 
-            <h1>cadastro</h1>
-            <p>
-              Faça seu cadastro, entre na plataforma e se desfaça de materiais que não usa mais.
+        <section className="register-header">
+
+          <h1>Registro</h1>
+          <p>
+            Faça seu registro, entre na plataforma e se desfaça de materiais que não usa mais.
           </p>
-            <Link className="back-link" to="/">
-              <FiArrowLeft size={16} color="#1877F2" />
+          <Link className="back-link" to="/">
+            <FiArrowLeft size={16} color="#1877F2" />
             Já tenho cadastro
           </Link>
-          </section>
-        </Container>
-      </div>
+        </section>
+      </Container>
+    </div>
 
-    )
-  }
+  )
+}
 
 
 export default Register

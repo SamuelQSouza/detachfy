@@ -79,6 +79,7 @@
     width: 20%;
 }
 
+
 @media only screen and (max-width: 730px) {
     #page-register {
         background-color: #fff;
