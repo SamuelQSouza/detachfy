@@ -1,12 +1,16 @@
 import mongoose, {Schema} from 'mongoose'
 
 const ProductSchema = new Schema({
-    product: String,
+    product_name: String,
     description: String,
     seller: {
         type: Schema.Types.ObjectId,
         ref: 'user'
     },
+    images: [
+        {path: String}
+    ],
+
     value: String,
 })
 
