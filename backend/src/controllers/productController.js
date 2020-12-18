@@ -9,6 +9,15 @@ export default {
     return res.json(productsView.renderMany(products))
 
   },
+  async show(req, res) {
+    const {id} = req.params
+ 
+    const products = await Product.find({ seller: id }).populate("seller").sort({data: "desc"})
+
+      
+    return res.json(productsView.renderMany(products))
+
+  },
 
   async store(req, res) {
     const { product_name, description, value } = req.body
