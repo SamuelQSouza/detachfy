@@ -13,13 +13,11 @@ const NewProduct = () => {
   const [product, setProduct] = useState('')
   const [description, setDescription] = useState('')
   const [value, setValue] = useState('')
-
   const [images, setImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([]);
 
   const history = useHistory();
 
-  const userName = localStorage.getItem('userName');
   const userId = localStorage.getItem('userId');
 
   

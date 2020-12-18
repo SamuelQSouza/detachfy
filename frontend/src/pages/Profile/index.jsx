@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
-
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
-
-import "./Profile.css";
-
 import logo from '../Login/logo.svg'
-
 import Card from '../../components/Card'
 
+import "./Profile.css";
 
 const Profile = () => {
 
@@ -46,6 +42,12 @@ const Profile = () => {
     history.push('/');
   }
 
+  function handleDeleteItem(itemId){
+    api.delete(`/product?id=${itemId}`, {headers: {seller: userId}})
+    setProducts(products.filter(product => product.id !== itemId))
+    
+  }
+
 
   return (
     <div className="page-home">
@@ -70,8 +72,8 @@ const Profile = () => {
             description={product.description}
             price={product.value}
             seller={product.seller}>
-              <Link onClick={() => console.log("foi")}>atualizar</Link>
-              <Link onClick={() => console.log("foi")}>delete</Link>
+              <Link >atualizar</Link>
+              <Link onClick={() =>handleDeleteItem(product.id)}>delete</Link>
             </Card>
             
 

@@ -18,6 +18,7 @@ routes.post('/user', userController.store)
 routes.get('/product', productController.index)
 routes.get('/product/:id', productController.show)
 routes.post('/product', upload.array('images') , productController.store)
+routes.delete('/product', productController.delete)
 
 
 

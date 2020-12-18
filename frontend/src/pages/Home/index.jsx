@@ -13,19 +13,9 @@ const Home = () => {
 
   const [products, setProducts] = useState([]);
 
-
-
-
-
   useEffect(async () => {
     const { data } = await api.get('/product')
     setProducts(data);
-
-
-
-
-
-
   }, []);
 
 
@@ -58,7 +48,7 @@ const Home = () => {
             description={product.description}
             price={product.value}
             seller={product.seller}>
-              <Link onClick={() => console.log("foi")}>contatar vendedor</Link>
+              <a href= {`https://api.whatsapp.com/send?phone=${product.seller.whatsapp}`}>contatar vendedor</a>
             </Card> 
 
         )
