@@ -29,7 +29,7 @@ const Login = () => {
 
       localStorage.setItem('userId', response.data.id);
       localStorage.setItem('userName', response.data.name);
-      history.push('/home');
+      history.push('/profile');
     } catch (error) {
       alert('Erro no logon, tente novamente');
     }

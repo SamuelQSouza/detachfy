@@ -7,6 +7,8 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
     background-color: #eee;
 }
@@ -19,7 +21,7 @@ body,
 input,
 button,
 textarea {
-    font: 600 18px Nunito, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 button {
@@ -42,7 +44,7 @@ a {
     height: 20px;
 }
 
-input {
+input, textarea  {
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     box-sizing: border-box;
@@ -51,6 +53,6 @@ input {
     color: #333;
 }
 
-input:focus {
+input:focus, textarea:focus{
     border: 1px solid #1877F2;
 }

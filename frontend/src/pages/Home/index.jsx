@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-
 import { Link } from 'react-router-dom'
 
 import api from '../../services/api';
+import logo from '../Login/logo.svg'
+import Card from '../../components/Card'
 
 import "./Home.css";
 
-import logo from '../Login/logo.svg'
 
 
 const Home = () => {
@@ -17,12 +17,12 @@ const Home = () => {
 
 
 
-  useEffect(async() => {
-    const {data}= await api.get('/product')
+  useEffect(async () => {
+    const { data } = await api.get('/product')
     setProducts(data);
-    
-    
-    
+
+
+
 
 
 
@@ -41,31 +41,26 @@ const Home = () => {
 
         <img src={logo} className="App-logo" alt="logo" />
         <div className="button-container">
-          <Link  to="/login">Login</Link>
-          
+          <Link to="/login">Login</Link>
+
 
         </div>
 
       </header>
-      <main className="">
+      <main >
 
         {products && products.map(product => (
-          <div className="card"
-           key={product.id}
           
-          >
-            <div className="img-container">
-              <img src={product.images[0].url} alt="" />
-            </div>
-            <div className="info-container">
-              <h3>{product.product_name}</h3>
-              <p>{product.description}</p>
-              <p>{product.value}</p>
-              <p>{product.seller.university}</p>
+          <Card
+            id={product.id}
+            image={product.images[0]}
+            product_name={product.product_name}
+            description={product.description}
+            price={product.value}
+            seller={product.seller}>
+              <Link onClick={() => console.log("foi")}>contatar vendedor</Link>
+            </Card> 
 
-
-            </div>
-          </div>
         )
 
         )}

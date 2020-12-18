@@ -5,12 +5,14 @@ import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import "./Home.css";
+import "./Profile.css";
 
 import logo from '../Login/logo.svg'
 
+import Card from '../../components/Card'
 
-const Home = () => {
+
+const Profile = () => {
 
   const [products, setProducts] = useState([]);
 
@@ -18,19 +20,17 @@ const Home = () => {
 
   const userName = localStorage.getItem('userName');
   const userId = localStorage.getItem('userId');
+  console.log( userId
+    )
 
   const [firstName] = userName.split(' ')
 
-  useEffect(() => {
-    if (userName && userId) {
-      api
-        .get('product')
-        .then(response => {
-          console.log(response);
-          setProducts(response.data);
-          console.log(products);
-          
-        });
+  useEffect(async () => {
+    if (userName && userId) {     
+        const { data } = await api.get(`/product/${userId}`)
+        console.log(data);
+        
+        setProducts(data);
 
     } else {
       history.push('/')
@@ -53,19 +53,35 @@ const Home = () => {
         
         <img src={logo} className="App-logo" alt="logo" />
         <div className="button-container">
-          <button>new</button>
-          <button><FiPower></FiPower></button>
+          <Link to='/profile/new'>new</Link>
+          <Link onClick={() => handleLogout()}><FiPower></FiPower></Link>
         </div>
 
       </header>
       <p>Bem vindo {firstName.toLowerCase()},</p>
       <main className="">
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
+
+        {products && products.map(product => (
+          <>
+          <Card
+            id={product.id}
+            image={product.images[0]}
+            product_name={product.product_name}
+            description={product.description}
+            price={product.value}
+            seller={product.seller}>
+              <Link onClick={() => console.log("foi")}>atualizar</Link>
+              <Link onClick={() => console.log("foi")}>delete</Link>
+            </Card>
+            
+
+
+            </>
+        )
+
+        )}
+
+
       </main>
     </div>
 
@@ -73,4 +89,4 @@ const Home = () => {
 };
 
 
-export default Home;
+export default Profile;

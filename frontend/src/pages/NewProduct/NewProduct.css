@@ -1,0 +1,154 @@
+#page-register {
+    background-color: #eee;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .register-header {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px rgba(204, 204, 204, 0.25) solid;
+}
+
+.container form {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .single-input, textarea {
+    border-radius: 10px;
+    width: 80%;
+}
+
+#page-register .container .register-header img {
+    width: 30%;
+}
+
+#page-register .container .register-header h1 {
+    margin: 32px 0 16px;
+    font-size: 32px;
+}
+
+#page-register .container .register-header p {
+    font-size: 14px;
+    color: #737380;
+    line-height: 20px;
+    margin-left: 10px;
+    max-width: 280px;
+}
+
+.back-link svg {
+    margin: 0px 25px 0 0;
+    height: 100%;
+    width: 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+.form-container button {
+    width: 80%;
+    max-width: 250px;
+    height: 36px;
+}
+
+ .input-block + .input-block {
+    margin-top: 24px;
+  }
+  
+   .input-block label {
+    display: flex;
+    color: #8fa7b3;
+    margin-bottom: 8px;
+    line-height: 24px;
+  }
+  
+   /* .input-block label span {
+    font-size: 14px;
+    color: #8fa7b3;
+    margin-left: 24px;
+    line-height: 24px;
+  }
+   */
+
+  
+
+  
+  .form-container textarea {
+    min-height: 120px;
+    max-height: 240px;
+    resize: vertical;
+    padding: 16px;
+    line-height: 28px;
+  }
+
+  .input-block{
+      margin: 0 10%;
+      align-self: flex-start;
+  }
+  
+   .input-block .images-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 16px;
+    
+  }
+  
+   .input-block .images-container img {
+    width: 100%;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+   .input-block .images-container .new-image {
+    height: 96px;
+    background: #f5f8fa;
+    border: 1px dashed #96d2f0;
+    border-radius: 20px;
+    cursor: pointer;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+   .input-block input[type="file"] {
+    visibility: hidden;
+    display: none;
+  }
+  
+
+  
+
+
+
+
+
+
+
+@media only screen and (max-width: 730px) {
+    #page-register {
+        background-color: #fff;
+    }
+    #page-register .container {
+        flex-direction: column-reverse;
+        box-shadow: none;
+        width: 90vw;
+        height: 100vh;
+    }
+    #page-register .container .register-header img {
+        margin-top: 30px;
+    }
+    .container .register-header {
+        border-left: none;
+    }
+}
